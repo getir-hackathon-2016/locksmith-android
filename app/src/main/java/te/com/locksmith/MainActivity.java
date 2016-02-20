@@ -1,52 +1,104 @@
 package te.com.locksmith;
 
+import android.app.NotificationManager;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.widget.Toast;
+
+import com.mikepenz.materialdrawer.Drawer;
+
+import te.com.locksmith.adapters.ActionBarAdapter;
+import te.com.locksmith.adapters.LeftNavAdapter;
+import te.com.locksmith.constants.ActiveFragmentConservative;
+import te.com.locksmith.dao.ActivityResultEvent;
+import te.com.locksmith.helpers.ActivityResultBus;
+import te.com.locksmith.helpers.BackStackHelper;
+import te.com.locksmith.helpers.OnBackPressedHelper;
+import te.com.locksmith.tools.FragmentChanger;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Drawer leftNavDrawer = null;
+    private boolean doubleBackToExitPressedOnce = false;
+    public View activityRootView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        this.activityRootView = findViewById(R.id.activityRoot);
+
+        // Handle Toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-    }
+        //ActionBarAdapter
+        ActionBarAdapter actionBarAdapter = new ActionBarAdapter(MainActivity.this, getSupportActionBar());
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+        Bundle extras = getIntent().getExtras();
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        //Check for notification click
+        if (extras != null) {
+            //Create the drawer
+            leftNavDrawer = new LeftNavAdapter(MainActivity.this, toolbar, actionBarAdapter, false).build();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        } else {
+            //Create the drawer
+            leftNavDrawer = new LeftNavAdapter(MainActivity.this, toolbar, actionBarAdapter, true).build();
         }
 
-        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        ActivityResultBus.getInstance().postQueue(
+                new ActivityResultEvent(requestCode, resultCode, data));
+    }
+
+    @Override
+    public void onBackPressed() {
+        //handle the back press :D close the drawer first and if the drawer is closed close the activity
+        if (leftNavDrawer != null && leftNavDrawer.isDrawerOpen()) {
+            leftNavDrawer.closeDrawer();
+        } else if (OnBackPressedHelper.getOnBackPressed() != null) {
+            OnBackPressedHelper.getOnBackPressed().Run();
+        } else if (!BackStackHelper.isEmty()) {
+            new FragmentChanger(MainActivity.this, BackStackHelper.pop(), null, false, ActiveFragmentConservative.fragment.getClass());
+        } else {
+            if (doubleBackToExitPressedOnce) {
+                super.onBackPressed();
+                return;
+            }
+
+            this.doubleBackToExitPressedOnce = true;
+            Toast.makeText(this, "Çıkmak için tekrar basın", Toast.LENGTH_SHORT).show();
+
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    doubleBackToExitPressedOnce = false;
+                }
+            }, 2000);
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //Uygulama açıldığında daha önceden verilmiş olan notifleri siliyorum
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.cancelAll();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
     }
 }
