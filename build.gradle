@@ -14,7 +14,14 @@ buildscript {
 
 allprojects {
     repositories {
+        mavenCentral()
         jcenter()
+        maven {
+            url "https://jitpack.io"
+        }
+        maven {
+            url "https://mint.splunk.com/gradle/"
+        }
     }
 }
 
