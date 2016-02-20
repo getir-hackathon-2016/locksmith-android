@@ -42,19 +42,18 @@ public class LeftNavAdapter {
                 .withHeader(R.layout.left_nav_header)
                 .withToolbar(toolbar)
                 .addDrawerItems(
-                        new PrimaryDrawerItem().withName("Yardım mı Lazım ?").withDescription("SSS, iletişim ve daha fazlası").withIcon(FontAwesome.Icon.faw_question).withIdentifier(1).withCheckable(true)
+                        new PrimaryDrawerItem().withName("Yardım mı Lazım ?").withDescription("SSS, iletişim ve daha fazlası").withIcon(FontAwesome.Icon.faw_question).withIdentifier(0).withCheckable(true)
                         //new PrimaryDrawerItem().withName("Paylaş").withDescription("Paylaş ki yayılsın").withIcon(FontAwesome.Icon.faw_share_alt).withIdentifier(4).withCheckable(false)
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
                     public boolean onItemClick(AdapterView<?> parent, View view, int position, long id, IDrawerItem drawerItem) {
 
-                        ActionBarHelper.hideRightButton();
-                        BackStackHelper.clearStack();
-
                         switch (position) {
                             case 0:
                                 ActionBarHelper.setTitle("Yardım");
+                                ActionBarHelper.hideRightButton();
+                                BackStackHelper.clearStack();
                                 new FragmentChanger((FragmentActivity) context, new HelpFragment(), null, false, null);
                                 break;
                         }

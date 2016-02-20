@@ -20,8 +20,8 @@ public class HelpFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.help, container, false);
+        View view = inflater.inflate(R.layout.help, container, false);
 
-        return v;
+        return view;
     }
 }
