@@ -1,6 +1,43 @@
 <resources>
-    <!-- Example customization of dimensions originally defined in res/values/dimens.xml
-         (such as screen margins) for screens with more than 820dp of available width. This
-         would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively). -->
-    <dimen name="activity_horizontal_margin">64dp</dimen>
+    <dimen name="pad_1dp">2dp</dimen>
+    <dimen name="pad_2dp">4dp</dimen>
+    <dimen name="pad_3dp">6dp</dimen>
+    <dimen name="pad_4dp">8dp</dimen>
+    <dimen name="pad_5dp">10dp</dimen>
+    <dimen name="pad_8dp">16dp</dimen>
+    <dimen name="pad_10dp">20dp</dimen>
+    <dimen name="pad_12dp">24dp</dimen>
+    <dimen name="pad_15dp">30dp</dimen>
+    <dimen name="pad_20dp">40dp</dimen>
+    <dimen name="pad_25dp">50dp</dimen>
+    <dimen name="pad_30dp">60dp</dimen>
+    <dimen name="pad_35dp">70dp</dimen>
+    <dimen name="pad_40dp">80dp</dimen>
+    <dimen name="pad_42dp">84dp</dimen>
+    <dimen name="pad_45dp">90dp</dimen>
+    <dimen name="pad_50dp">100dp</dimen>
+    <dimen name="pad_52dp">104dp</dimen>
+    <dimen name="pad_55dp">110dp</dimen>
+    <dimen name="pad_60dp">120dp</dimen>
+    <dimen name="pad_65dp">130dp</dimen>
+    <dimen name="pad_70dp">140dp</dimen>
+    <dimen name="pad_100dp">200dp</dimen>
+    <dimen name="pad_120dp">240dp</dimen>
+    <dimen name="pad_200dp">400dp</dimen>
+    <dimen name="pad_250dp">500dp</dimen>
+    <dimen name="pad_300dp">600dp</dimen>
+    <dimen name="pad_301dp">602dp</dimen>
+    <dimen name="pad_302dp">604dp</dimen>
+    <dimen name="pad_310dp">620dp</dimen>
+    <dimen name="pad_chat_item">60dp</dimen>
+    <dimen name="pad_chat_item1">160dp</dimen>
+    <dimen name="txt_7sp">12sp</dimen>
+    <dimen name="txt_12sp">18sp</dimen>
+    <dimen name="txt_13sp">19sp</dimen>
+    <dimen name="txt_14sp">20sp</dimen>
+    <dimen name="txt_15sp">22sp</dimen>
+    <dimen name="txt_16sp">24sp</dimen>
+    <dimen name="txt_18sp">27sp</dimen>
+    <dimen name="txt_20sp">30sp</dimen>
+
 </resources>

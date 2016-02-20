@@ -62,9 +62,19 @@ public class SplashScreen extends Activity {
 
         if (isRunning) {
             isRunning = false;
-            Intent i = new Intent(SplashScreen.this, MainActivity.class);
-            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(i);
+
+            boolean isMember = tools.getSharedPreference("isMember", false);
+
+            Intent intent;
+
+            if (!isMember) {
+                intent = new Intent(SplashScreen.this, RegisterActivity.class);
+            } else {
+                intent = new Intent(SplashScreen.this, MainActivity.class);
+            }
+
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
             finish();
         }
     }

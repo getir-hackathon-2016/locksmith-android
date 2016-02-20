@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <!--  Header  Starts-->
+        <LinearLayout
+            android:id="@+id/header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/pad_15dp"
+            android:paddingRight="@dimen/pad_15dp"
+            android:paddingTop="@dimen/pad_5dp">
+
+        </LinearLayout>
+        <!--  Header Ends -->
+
+        <!-- Registration Form -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/header"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/pad_10dp">
+            <!-- Name -->
+            <EditText
+                android:id="@+id/regNickName"
+                style="@style/editext_graybg"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/pad_5dp"
+                android:hint="@string/name"
+                android:inputType="text"></EditText>
+            <!--  Phone Number -->
+            <EditText
+                android:id="@+id/regPhoneNumber"
+                style="@style/editext_graybg"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/pad_10dp"
+                android:layout_marginTop="@dimen/pad_5dp"
+                android:hint="@string/phone_number"
+                android:inputType="phone">
+
+                <requestFocus />
+            </EditText>
+
+            <Button
+                android:id="@+id/regBtnReg"
+                style="@style/btn_material_white_large"
+                android:text="@string/register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+        <!-- Registration Form Ends -->
+    </RelativeLayout>
+</ScrollView>

@@ -17,8 +17,8 @@
             android:name=".SplashScreen"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize|stateHidden"
-            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="adjustResize|stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,10 +26,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
-            android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar.TranslucentStatus"
+            android:name=".RegisterActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize|stateHidden"/>
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize"/>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MaterialDrawerTheme.Light.DarkToolbar.TranslucentStatus"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
     </application>
 
 </manifest>
