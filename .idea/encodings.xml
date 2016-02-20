@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app/src/main/java/te/com/locksmith/interfaces/OnTaskFailure.java" charset="windows-1254" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/te/com/locksmith/interfaces/OnTaskFinish.java" charset="windows-1254" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/te/com/locksmith/interfaces/OnTaskStart.java" charset="windows-1254" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/te/com/locksmith/interfaces/OnTaskSuccess.java" charset="windows-1254" />
+  </component>
+</project>
