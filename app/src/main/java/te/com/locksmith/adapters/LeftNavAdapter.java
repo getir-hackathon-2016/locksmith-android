@@ -42,10 +42,7 @@ public class LeftNavAdapter {
                 .withHeader(R.layout.left_nav_header)
                 .withToolbar(toolbar)
                 .addDrawerItems(
-                        new PrimaryDrawerItem().withName("Mekanlar").withDescription("Fırsatlardan haberin olsun").withIcon(FontAwesome.Icon.faw_map_marker).withIdentifier(1).withCheckable(true),
-                        //new PrimaryDrawerItem().withName("Meraklı Sincap").withDescription("Damak tadına en uygun öneriler").withIcon(FontAwesome.Icon.faw_search).withIdentifier(2).withCheckable(true),
-                        new PrimaryDrawerItem().withName("Uygulama Ayarları").withDescription("Bildirimler, gizlilik ve daha fazlası").withIcon(FontAwesome.Icon.faw_gears).withIdentifier(2).withCheckable(true),
-                        new PrimaryDrawerItem().withName("Yardım mı Lazım ?").withDescription("SSS, iletişim ve daha fazlası").withIcon(FontAwesome.Icon.faw_question).withIdentifier(3).withCheckable(true)
+                        new PrimaryDrawerItem().withName("Yardım mı Lazım ?").withDescription("SSS, iletişim ve daha fazlası").withIcon(FontAwesome.Icon.faw_question).withIdentifier(1).withCheckable(true)
                         //new PrimaryDrawerItem().withName("Paylaş").withDescription("Paylaş ki yayılsın").withIcon(FontAwesome.Icon.faw_share_alt).withIdentifier(4).withCheckable(false)
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
