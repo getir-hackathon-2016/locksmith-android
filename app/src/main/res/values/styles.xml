@@ -32,4 +32,9 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="SimpleDialogLight" parent="Material.App.Dialog.Simple.Light">
+        <item name="di_inAnimation">@anim/material_dialog_anim_scale_in</item>
+        <item name="di_outAnimation">@anim/material_dialog_anim_scale_out</item>
+    </style>
+
 </resources>

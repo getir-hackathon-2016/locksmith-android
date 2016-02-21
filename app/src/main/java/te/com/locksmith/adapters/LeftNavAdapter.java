@@ -15,7 +15,9 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.util.KeyboardUtil;
 
 import te.com.locksmith.R;
+import te.com.locksmith.fragments.DetectLocation;
 import te.com.locksmith.fragments.HelpFragment;
+import te.com.locksmith.fragments.SelectServiceType;
 import te.com.locksmith.helpers.ActionBarHelper;
 import te.com.locksmith.helpers.BackStackHelper;
 import te.com.locksmith.tools.FragmentChanger;
@@ -42,7 +44,8 @@ public class LeftNavAdapter {
                 .withHeader(R.layout.left_nav_header)
                 .withToolbar(toolbar)
                 .addDrawerItems(
-                        new PrimaryDrawerItem().withName("Yardım mı Lazım ?").withDescription("SSS, iletişim ve daha fazlası").withIcon(FontAwesome.Icon.faw_question).withIdentifier(0).withCheckable(true)
+                        new PrimaryDrawerItem().withName("Çilingir çağır").withDescription("Kapıda kalma").withIcon(FontAwesome.Icon.faw_question).withIdentifier(1).withCheckable(true),
+                        new PrimaryDrawerItem().withName("Yardım mı Lazım ?").withDescription("SSS, iletişim ve daha fazlası").withIcon(FontAwesome.Icon.faw_question).withIdentifier(2).withCheckable(true)
                         //new PrimaryDrawerItem().withName("Paylaş").withDescription("Paylaş ki yayılsın").withIcon(FontAwesome.Icon.faw_share_alt).withIdentifier(4).withCheckable(false)
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
@@ -51,6 +54,11 @@ public class LeftNavAdapter {
 
                         switch (position) {
                             case 0:
+                                ActionBarHelper.setTitle("Locksmith");
+                                ActionBarHelper.hideRightButton();
+                                BackStackHelper.clearStack();
+                                new FragmentChanger((FragmentActivity) context, new DetectLocation(), null, false, null);
+                            case 1:
                                 ActionBarHelper.setTitle("Yardım");
                                 ActionBarHelper.hideRightButton();
                                 BackStackHelper.clearStack();

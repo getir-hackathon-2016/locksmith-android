@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import te.com.locksmith.tools.Tools;
+
 public class RegisterActivity extends Activity {
     private Button btn;
     @Override
@@ -16,6 +18,8 @@ public class RegisterActivity extends Activity {
     }
 
     public void getMainPage(View view) {
+        Tools tools = new Tools(RegisterActivity.this);
+        tools.setSharedPreference("isMember",true);
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
