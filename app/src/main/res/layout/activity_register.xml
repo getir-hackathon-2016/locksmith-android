@@ -39,6 +39,15 @@
                 android:layout_marginTop="@dimen/pad_5dp"
                 android:hint="@string/name"
                 android:inputType="text"></EditText>
+            <!--E-mail-->
+            <EditText
+                android:id="@+id/regEMail"
+                style="@style/editext_graybg"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/pad_10dp"
+                android:layout_marginTop="@dimen/pad_5dp"
+                android:hint="@string/e_mail"
+                android:inputType="textEmailAddress"></EditText>
             <!--  Phone Number -->
             <EditText
                 android:id="@+id/regPhoneNumber"
@@ -51,13 +60,24 @@
 
                 <requestFocus />
             </EditText>
+            <!--  Password -->
+            <EditText
+                android:id="@+id/regPassword"
+                style="@style/editext_graybg"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/pad_10dp"
+                android:layout_marginTop="@dimen/pad_5dp"
+                android:hint="@string/password"
+                android:inputType="textPassword"></EditText>
+
 
             <Button
                 android:id="@+id/regBtnReg"
                 style="@style/btn_material_white_large"
                 android:text="@string/register"
                 android:layout_width="@dimen/pad_120dp"
-                android:layout_height="@dimen/pad_60dp" />
+                android:layout_height="@dimen/pad_60dp"
+                android:onClick="getMainPage"/>
 
 
         </LinearLayout>
