@@ -38,7 +38,6 @@ import te.com.locksmith.tools.Tools;
 public class DetectLocation extends CustomFragment {
     private GPSTracker gpsTracker;
     private RippleBackground rippleBackground;
-    private String aramaSonuc = null;
     private TextAwesome mapMarker;
 
     @Override
@@ -143,7 +142,26 @@ public class DetectLocation extends CustomFragment {
     }
 
     public void showSelectScreen() {
-        new FragmentChanger(context, new SelectServiceType(), null, false, DetectLocation.class);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                try {
+                    Thread.sleep(3000);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    context.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            new FragmentChanger(context, new SelectServiceType(), null, false, DetectLocation.class);
+                        }
+                    });
+                }
+            }
+        }).start();
+
     }
 
     @Override

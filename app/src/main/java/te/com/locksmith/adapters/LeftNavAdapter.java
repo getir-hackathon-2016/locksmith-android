@@ -43,6 +43,7 @@ public class LeftNavAdapter {
                 .withHeader(R.layout.left_nav_header)
                 .withToolbar(toolbar)
                 .addDrawerItems(
+
                         new PrimaryDrawerItem().withName("Yardım mı Lazım ?").withDescription("SSS, iletişim ve daha fazlası").withIcon(FontAwesome.Icon.faw_question).withIdentifier(2).withCheckable(true),
         new PrimaryDrawerItem().withName("Çilingir çağır").withDescription("Kapıda kalma").withIcon(FontAwesome.Icon.faw_question).withIdentifier(1).withCheckable(true)
                 )
@@ -57,7 +58,6 @@ public class LeftNavAdapter {
                                 BackStackHelper.clearStack();
                                 new FragmentChanger((FragmentActivity) context, new HelpFragment(), null, false, null);
                                 break;
-
                             case 1:
                                 ActionBarHelper.setTitle("Locksmith");
                                 ActionBarHelper.hideRightButton();
