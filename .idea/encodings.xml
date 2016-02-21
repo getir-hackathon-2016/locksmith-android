@@ -12,6 +12,7 @@
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/help.xml" charset="windows-1254" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/left_nav_header.xml" charset="windows-1254" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/right_nav_empty.xml" charset="windows-1254" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/icon_location_pin.png" charset="windows-1254" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/values-w820dp/font_awesome.xml" charset="windows-1254" />
   </component>
 </project>
