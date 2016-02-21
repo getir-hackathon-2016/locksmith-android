@@ -53,13 +53,15 @@
                     android:gravity="center_horizontal">
 
 
-                    <TextView
-                        android:id="@+id/cafeAd"
-                        android:layout_width="wrap_content"
+                    <Button
+                        android:id="@+id/locksmithTypeHouse"
+                        android:layout_width="360dp"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="5dp"
-                        android:text="Murat Baklava"
-                        android:textColor="@color/secondary_text"
+                        android:text="House"
+                        android:layout_gravity="center"
+                        android:layout_centerHorizontal="true"
+                        android:background="@color/accent_light"
                         android:textSize="20sp" />
                 </LinearLayout>
 
@@ -68,15 +70,6 @@
                     android:layout_height="wrap_content">
 
 
-
-                    <TextView
-                        android:id="@+id/cafeTel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:text="02642780989"
-                        android:textColor="@color/secondary_text"
-                        android:textSize="20sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -90,26 +83,16 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="5dp"
                         android:orientation="horizontal">
-                        <TextView
-                            android:id="@+id/cafeIlce"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Serdivan"
-                            android:textColor="@color/secondary_text"
-                            android:textSize="20sp"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text=" / "
-                            android:textColor="@color/secondary_text"
-                            android:textSize="20sp"/>
-                        <TextView
-                            android:id="@+id/cafeSehir"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="SAKARYA"
-                            android:textColor="@color/secondary_text"
-                            android:textSize="20sp"/>
+                        <Button
+                            android:id="@+id/locksmithTypeCar"
+                            android:layout_width="360dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="5dp"
+                            android:text="Car"
+                            android:layout_gravity="center"
+                            android:layout_centerHorizontal="true"
+                            android:background="@color/accent_light"
+                            android:textSize="20sp" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -117,14 +100,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
-
-                    <TextView
-                        android:id="@+id/cafeWeb"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <Button
+                        android:id="@+id/locksmithTypeCasbox"
+                        android:layout_width="360dp"
+                        android:layout_height="match_parent"
                         android:layout_marginBottom="5dp"
-                        android:text="redkit.ticarikk.com"
-                        android:textColor="@color/secondary_text"
+                        android:text="Cashbox"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
+                        android:background="@color/accent_light"
                         android:textSize="20sp" />
                 </LinearLayout>
 
@@ -132,6 +116,5 @@
 
         </ScrollView>
     </LinearLayout>
-
 
 </com.desarrollodroide.libraryfragmenttransactionextended.SlidingRelativeLayout>
