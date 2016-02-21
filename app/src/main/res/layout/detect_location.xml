@@ -5,4 +5,24 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
+    <com.skyfishjy.library.RippleBackground
+        android:id="@+id/rippleBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:rb_color="@color/accent"
+        app:rb_duration="2200"
+        app:rb_radius="32dp"
+        app:rb_rippleAmount="5"
+        app:rb_scale="6">
+        <te.com.locksmith.customComponets.TextAwesome
+            android:id="@+id/mapMarker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Burdasın"
+            android:textColor="@color/primary"
+            android:textSize="56sp"
+            android:paddingBottom="30dp"/>
+    </com.skyfishjy.library.RippleBackground>
+
 </com.desarrollodroide.libraryfragmenttransactionextended.SlidingRelativeLayout>

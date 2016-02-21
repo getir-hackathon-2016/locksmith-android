@@ -8,20 +8,16 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
-import com.orhanobut.logger.Logger;
 import com.rey.material.app.Dialog;
 import com.rey.material.app.DialogFragment;
 import com.rey.material.app.SimpleDialog;
 import com.skyfishjy.library.RippleBackground;
-
-import net.frakbot.jumpingbeans.JumpingBeans;
 
 import te.com.locksmith.R;
 import te.com.locksmith.constants.Globals;
@@ -41,7 +37,9 @@ import te.com.locksmith.tools.Tools;
  */
 public class DetectLocation extends CustomFragment {
     private GPSTracker gpsTracker;
+    private RippleBackground rippleBackground;
     private String aramaSonuc = null;
+    private TextAwesome mapMarker;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,7 +51,8 @@ public class DetectLocation extends CustomFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.detect_location, null);
-
+        mapMarker = (TextAwesome) v.findViewById(R.id.mapMarker);
+        rippleBackground = (RippleBackground) v.findViewById(R.id.rippleBackground);
         return v;
     }
 
@@ -63,6 +62,13 @@ public class DetectLocation extends CustomFragment {
         ActionBarHelper.setTitle("Locksmith");
         ActionBarHelper.hideRightButton();
 
+        YoYo.with(Techniques.BounceInUp)
+                .duration(1500)
+                .playOn(mapMarker);
+
+        if (rippleBackground != null) {
+            rippleBackground.startRippleAnimation();
+        }
         int resp = GooglePlayServicesUtil.isGooglePlayServicesAvailable(context);
         if (resp == ConnectionResult.SUCCESS) {
             gpsTracker.getLocation(onGPSWhenClose, onGPSConnected, onGPSTimeOut);
